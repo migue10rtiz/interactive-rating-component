@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/* ========== VARIABLES ========== */
+// Colors
+$orange-color: hsl(25, 97%, 53%);
+$white-color: hsl(0, 0%, 100%);
+$grey-color-light: hsl(217, 12%, 63%);
+$grey-color-medium: hsl(216, 12%, 54%);
+$blue-color-dark: hsl(213, 19%, 18%);
+$blue-color-darker: hsl(216, 12%, 8%);
+
+// Fonts & Typography
+$font-family: 'Overpass', sans-serif;
+
+$title-font-size: 2.4rem; // 32px
+$normal-font-size: 1.6rem; // 16px
+$paragraph-font-size: 1.5rem; // 15px
+
+// Font Weight
+$normal-font-weight: 400;
+$bold-font-weight: 700;
+
+
+/* ========== RESETS ========== */
+:root {
+    font-size: 62.5%; // 10px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // border: 1px solid red;
+}
+
+body {
+    background-color: $blue-color-darker;
+    font-family: $font-family;
+    font-size: $normal-font-size;
+}
+
+h1 {
+    color: $white-color;
+    font-size: $title-font-size;
+    font-weight: $normal-font-weight;
+    line-height: 1.6;
+}
+
+p {
+    color: $grey-color-light;
+    font-size: $paragraph-font-size;
+    font-weight: $normal-font-weight;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    pointer-events: none;
+}
+
+/* ========== COMPONENT ========== */
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1440px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating__container,
+.thankyou__container {
+    position: absolute;
+    display: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 380px;
+    width: 340px;
+    margin: 0 auto;
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    background-image: linear-gradient(220deg,
+            hsl(213, 20%, 18%) 0%,
+            hsl(212, 18%, 14%) 50%,
+            hsl(213, 18%, 10%) 100%);
+}
+
+.rating {
+
+    &__description,
+    &__list {
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+        display: inherit;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        &-numbers {
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            color: $grey-color-medium;
+            background-color: $blue-color-dark;
+            width: 30px;
+            height: 30px;
+            padding: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .2s ease;
+
+            &:hover {
+                color: $white-color;
+                background-color: $orange-color;
+            }
+
+            &:active {
+                color: $white-color;
+                background-color: $grey-color-light;
+            }
+        }
+    }
+
+    &__button {
+        color: $white-color;
+        background-color: $orange-color;
+        font-size: $paragraph-font-size;
+        width: 100%;
+        border-radius: 2rem;
+        padding: 1rem 0;
+        text-align: center;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        transition: all .2s ease;
+
+        &:hover {
+            color: $orange-color;
+            background-color: $white-color;
+        }
+    }
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-color-dark;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 2rem;
+}
+
+.active {
+    color: $white-color;
+    background-color: $grey-color-light;
+}
+
+/* ========== THANK YOU STATE ========== */
+.thankyou {
+    &__container {
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        display: none;
+    }
+
+    &__img {
+        width: 130px;
+    }
+
+    &__rating-input {
+        color: $orange-color;
+        font-size: $normal-font-size;
+        font-weight: $normal-font-weight;
+        background-color: $blue-color-dark;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+    }
+}
